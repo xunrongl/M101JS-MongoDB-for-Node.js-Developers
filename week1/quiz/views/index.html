@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create Movie Entries</title>
+</head>
+<body>
+	<form action="/create-movie" method="post">
+		<label>
+			Title:
+			<input type="text" name="title">
+		</label>
+		<label>
+			Year:
+			<input type="text" name="year">
+		</label>
+		<label>
+			imdb
+			<input type="text" name="imdb">
+		</label>
+		<button type="submit">Submit</button>
+	</form>
+
+	<ul>
+		Movie List
+		{% for movie in movies %}
+		<li>{{movie.title}} {{movie.year}} {{movie.imdb}}</li>
+		{% else %}
+		<span>Not movie found</span>
+		{% endfor %}
+	</ul>
+	
+</body>
+</html>
